@@ -362,7 +362,10 @@
 //! * [generic_once_cell](https://crates.io/crates/generic_once_cell) (bring
 //!   your own mutex)
 
-#![cfg_attr(not(feature = "std"), no_std)]
+#![no_std]
+
+#[cfg(feature = "std")]
+extern crate std;
 
 #[cfg(feature = "alloc")]
 extern crate alloc;
